@@ -4,7 +4,7 @@
 *.xml
 # Log file
 *.log
-.pdf
+*.pdf
 # BlueJ files
 *.ctxt
 
