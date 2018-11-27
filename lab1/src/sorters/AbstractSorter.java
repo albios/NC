@@ -1,6 +1,6 @@
 package sorters;
 
-public abstract class AbstractSorters {
+public abstract class AbstractSorter {
 
     public static void swap (int [] arr, int ind1, int ind2) {
         int temp = arr [ind1];

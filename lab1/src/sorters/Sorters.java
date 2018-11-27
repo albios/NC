@@ -2,9 +2,9 @@ package sorters;
 
 import java.util.Arrays;
 
-public class Sorters extends AbstractSorters{
+public class Sorters extends AbstractSorter {
 
-  public void bubbleSortAsc (int arr []) {
+  public void bubbleSortForth (int arr []) {
     for (int i = 0; i < arr.length; i ++) {
       for (int j = 0; j < arr.length-1-i; j ++) {
         if (arr[j] > arr[j+1]) {
@@ -14,7 +14,7 @@ public class Sorters extends AbstractSorters{
     }
   }
   
-  public void bubbleSortDesc (int [] arr) {
+  public void bubbleSortBack (int [] arr) {
     for (int i = 0; i <= arr.length; i ++) {
       for (int j = arr.length-1; j >= i+1; j --) {
         if (arr[j-1] > arr [j]) {
@@ -47,43 +47,47 @@ public class Sorters extends AbstractSorters{
 		  }
 	  }
 	  if (low < right) {
-		  Sorters.quickSort(arr, low, right);
+		  quickSort(arr, low, right);
 	  }
 	  if (high > left) {
-		  Sorters.quickSort(arr, left, high);
+		  quickSort(arr, left, high);
 	  }
   }
   
-  public void mergeBubbleSortAsc (int [] arr) {
+  public void mergebubbleSortForth (int [] arr) {
 	  int [] arr1 = Arrays.copyOfRange(arr, 0, arr.length / 2);
 	  int [] arr2 = Arrays.copyOfRange(arr, arr.length / 2, arr.length);
-	  Sorters.bubbleSortAsc(arr1);
-	  Sorters.bubbleSortAsc(arr2);
-	  arr = Sorters.merge(arr1, arr2);
+	  Sorters s = new Sorters ();
+	  s.bubbleSortForth(arr1);
+      s.bubbleSortForth(arr2);
+	  arr = s.merge(arr1, arr2);
   }
   
-  public void mergeBubbleSortDesc (int [] arr) {
+  public void mergebubbleSortBack (int [] arr) {
 	  int [] arr1 = Arrays.copyOfRange (arr, 0, arr.length / 2);
 	  int [] arr2 = Arrays.copyOfRange(arr, arr.length / 2, arr.length);
-	  Sorters.bubbleSortDesc(arr1);
-	  Sorters.bubbleSortDesc(arr2);
-	  arr = Sorters.merge (arr1, arr2);
+      Sorters s = new Sorters ();
+	  s.bubbleSortBack(arr1);
+	  s.bubbleSortBack(arr2);
+	  arr = s.merge (arr1, arr2);
   }
   
   public void mergeArraySort (int [] arr) {
 	  int [] arr1 = Arrays.copyOfRange (arr, 0, arr.length / 2);
 	  int [] arr2 = Arrays.copyOfRange(arr, arr.length / 2, arr.length);
-	  Sorters.arraySort(arr1);
-	  Sorters.arraySort(arr2);
-	  arr = Sorters.merge (arr1, arr2);
+      Sorters s = new Sorters ();
+	  s.arraySort(arr1);
+	  s.arraySort(arr2);
+	  arr = s.merge (arr1, arr2);
   }
   
   public void mergeQuickSort (int [] arr) {
 	  int [] arr1 = Arrays.copyOfRange (arr, 0, arr.length/ 2);
 	  int [] arr2 = Arrays.copyOfRange (arr, arr.length / 2, arr.length);
-	  Sorters.quickSort (arr1, 0, arr1.length - 1);
-	  Sorters.quickSort (arr2, 0, arr2.length - 1);
-	  arr = Sorters.merge (arr1, arr2);
+      Sorters s = new Sorters ();
+	  s.quickSort (arr1, 0, arr1.length - 1);
+	  s.quickSort (arr2, 0, arr2.length - 1);
+	  arr = s.merge (arr1, arr2);
   }
   
   
@@ -91,11 +95,11 @@ public class Sorters extends AbstractSorters{
   public static void main(String[] args) {
 	/*
 	int [] a = {4,3,2,1};
-	Sorters.bubbleSortAsc(a);
+	Sorters.bubbleSortForth(a);
 	Sorters.printArray(a);
     
     int [] a1 = {4,3,2,1};
-    Sorters.bubbleSortDesc(a1);
+    Sorters.bubbleSortFBack(a1);
     Sorters.printArray(a1);
     
     int [] a2 = {4,3,2,1};
