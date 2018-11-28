@@ -3,26 +3,6 @@ package sorters;
 import java.util.Arrays;
 
 public class Sorters extends AbstractSorter {
-
-  public void bubbleSortForth (int arr []) {
-    for (int i = 0; i < arr.length; i ++) {
-      for (int j = 0; j < arr.length-1-i; j ++) {
-        if (arr[j] > arr[j+1]) {
-          swap (arr, j+1, j);
-        }
-      }
-    }
-  }
-  
-  public void bubbleSortBack (int [] arr) {
-    for (int i = 0; i <= arr.length; i ++) {
-      for (int j = arr.length-1; j >= i+1; j --) {
-        if (arr[j-1] > arr [j]) {
-          swap (arr, j-1, j);
-        }
-      }
-    }
-  }
   
   public void arraySort (int arr []) {
 	  Arrays.sort(arr);

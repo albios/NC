@@ -1,10 +1,9 @@
 package analyzers;
 
-import output.AnalyzerOutput;
-import sorters.Sorters;
+import sorters.BubbleSorter;
 import fillers.Filler;
 
-public class BubbleSortForthAnalyzer extends AbstractAnalyzer {
+public class BubbleSortForthAnalyzer extends Analyzer {
 	private long fillSortedAnalyzerMillis;
 	private long fillSortedWithRandomAnalyzerMillis;
 	private long fillSortedDescAnalyzerMillis;
@@ -14,15 +13,15 @@ public class BubbleSortForthAnalyzer extends AbstractAnalyzer {
 		return fillSortedAnalyzerMillis;
 	}
 
-	public long getfillSortedWithRandomAnalyzerMillis () {
+	public long getFillSortedWithRandomAnalyzerMillis () {
 		return fillSortedWithRandomAnalyzerMillis;
 	}
 
-	public long getfillSortedDescAnalyzerMillis () {
+	public long getFillSortedDescAnalyzerMillis () {
 		return fillSortedDescAnalyzerMillis;
 	}
 
-	public long getfillRandomAnalyzerMillis () {
+	public long getFillRandomAnalyzerMillis () {
 		return fillRandomAnalyzerMillis;
 	}
 
@@ -35,40 +34,40 @@ public class BubbleSortForthAnalyzer extends AbstractAnalyzer {
 
 	@Override
 	public void fillSortedAnalyzer (int len) {
-        int [] arr = new Filler().fillSorted (len);
+        int [] arr = Filler.fillSorted (len);
 
         long startCpuTime = CountTime.getCpuTime();
-		new Sorters().bubbleSortForth(arr);
+		new BubbleSorter().bubbleSortForth(arr);
 
 		fillSortedAnalyzerMillis = CountTime.getCpuTime() - startCpuTime;
 	}
 
 	@Override
 	public void fillSortedWithRandomAnalyzer (int len) {
-		int [] arr = new Filler().fillSortedWithRandom (len);
+		int [] arr = Filler.fillSortedWithRandom (len);
 
         long startCpuTime = CountTime.getCpuTime();
-        new Sorters().bubbleSortForth(arr);
+        new BubbleSorter().bubbleSortForth(arr);
 
 		fillSortedWithRandomAnalyzerMillis = CountTime.getCpuTime() - startCpuTime;
 	}
 
 	@Override
 	public void fillSortedDescAnalyzer (int len) {
-		int [] arr = new Filler().fillSortedDesc (len);
+		int [] arr = Filler.fillSortedDesc (len);
 
         long startCpuTime = CountTime.getCpuTime();
-        new Sorters().bubbleSortForth(arr);
+        new BubbleSorter().bubbleSortForth(arr);
 
 		fillSortedDescAnalyzerMillis = CountTime.getCpuTime() - startCpuTime;
 	}
 
 	@Override
 	public void fillRandomAnalyzer (int len) {
-		int [] arr = new Filler().fillRandom (len);
+		int [] arr = Filler.fillRandom (len);
 
         long startCpuTime = CountTime.getCpuTime();
-        new Sorters().bubbleSortForth(arr);
+        new BubbleSorter().bubbleSortForth(arr);
 
 		fillRandomAnalyzerMillis = CountTime.getCpuTime() - startCpuTime;
 	}

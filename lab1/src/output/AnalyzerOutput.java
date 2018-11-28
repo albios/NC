@@ -8,11 +8,11 @@ public class AnalyzerOutput {
         System.out.println ("It took " + millis + " milliseconds to complete");
     }
 
-    public void printAnalyzerResults (AbstractAnalyzer analyzer) {
+    public void printAnalyzerResults (Analyzer analyzer) {
         System.out.println ("It took " + analyzer.getFillSortedAnalyzerMillis () + " milliseconds to complete sorter on sorted array");
-        System.out.println ("It took " + analyzer.getfillSortedWithRandomAnalyzerMillis () + " milliseconds to complete sorter on sorted array with random at the end");
-        System.out.println ("It took " + analyzer.getfillSortedDescAnalyzerMillis () + " milliseconds to complete sorter on sorted in descending order array");
-        System.out.println ("It took " + analyzer.getfillRandomAnalyzerMillis () + " milliseconds to complete sorter on random array");
+        System.out.println ("It took " + analyzer.getFillSortedWithRandomAnalyzerMillis () + " milliseconds to complete sorter on sorted array with random at the end");
+        System.out.println ("It took " + analyzer.getFillSortedDescAnalyzerMillis () + " milliseconds to complete sorter on sorted in descending order array");
+        System.out.println ("It took " + analyzer.getFillRandomAnalyzerMillis () + " milliseconds to complete sorter on random array");
     }
 
     public void analyzeBubbleSortForthAnalyzer (int len) {

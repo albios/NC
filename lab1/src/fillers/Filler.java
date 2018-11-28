@@ -13,7 +13,7 @@ public class Filler {
 	}
 
 
-	public int [] fillSorted (int len) {
+	public static int [] fillSorted (int len) {
 		int [] arr = new int [len];
 		Random rand = new Random();
 		for (int i = 0; i < len; i ++) {
@@ -23,7 +23,7 @@ public class Filler {
 		return arr;
 	}
 	
-	public int [] fillSortedWithRandom (int len) {
+	public static int [] fillSortedWithRandom (int len) {
 		int [] arr = new int [len];
 		Random rand = new Random();
 		for (int i = 0; i < len; i ++) {
@@ -34,14 +34,14 @@ public class Filler {
 		return arr;
 	}
 
-	public int [] fillSortedDesc (int len) {
+	public static int [] fillSortedDesc (int len) {
 		int [] arr;
 		arr = fillSorted (len);
 		reverse (arr);
 		return arr;
 	}
 	
-	public int [] fillRandom (int len) {
+	public static int [] fillRandom (int len) {
 		int [] arr = new int [len];
 		Random rand = new Random();
 		for (int i = 0; i < len; i ++) {

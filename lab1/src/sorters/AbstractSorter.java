@@ -15,7 +15,7 @@ public abstract class AbstractSorter {
         System.out.println();
     }
 
-    public static int [] merge (int [] arr1, int [] arr2) {
+    public int [] merge (int [] arr1, int [] arr2) {
         int ind1 = 0;
         int ind2 = 0;
         int [] arr = new int [arr1.length + arr2.length];
