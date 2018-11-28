@@ -1,9 +1,13 @@
 package sorters;
 
 import java.util.Arrays;
+import sorters.BubbleSorter;
 
 public class Sorters extends AbstractSorter {
-  
+	/*@MyCustomAnnotation(
+
+	)*/
+
   public void arraySort (int arr []) {
 	  Arrays.sort(arr);
   }
@@ -37,7 +41,7 @@ public class Sorters extends AbstractSorter {
   public void mergebubbleSortForth (int [] arr) {
 	  int [] arr1 = Arrays.copyOfRange(arr, 0, arr.length / 2);
 	  int [] arr2 = Arrays.copyOfRange(arr, arr.length / 2, arr.length);
-	  Sorters s = new Sorters ();
+	  BubbleSorter s = new BubbleSorter ();
 	  s.bubbleSortForth(arr1);
       s.bubbleSortForth(arr2);
 	  arr = s.merge(arr1, arr2);
@@ -46,7 +50,7 @@ public class Sorters extends AbstractSorter {
   public void mergebubbleSortBack (int [] arr) {
 	  int [] arr1 = Arrays.copyOfRange (arr, 0, arr.length / 2);
 	  int [] arr2 = Arrays.copyOfRange(arr, arr.length / 2, arr.length);
-      Sorters s = new Sorters ();
+	  BubbleSorter s = new BubbleSorter ();
 	  s.bubbleSortBack(arr1);
 	  s.bubbleSortBack(arr2);
 	  arr = s.merge (arr1, arr2);
