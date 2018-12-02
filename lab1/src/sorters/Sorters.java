@@ -4,14 +4,12 @@ import java.util.Arrays;
 import sorters.BubbleSorter;
 
 public class Sorters extends AbstractSorter {
-	/*@MyCustomAnnotation(
-
-	)*/
-
+	@Sorter
   public void arraySort (int arr []) {
 	  Arrays.sort(arr);
   }
-  
+
+  @Sorter
   public void quickSort (int arr [], int low, int high) {
 	  int left = low;
 	  int right = high;
@@ -37,7 +35,8 @@ public class Sorters extends AbstractSorter {
 		  quickSort(arr, left, high);
 	  }
   }
-  
+
+  @Sorter
   public void mergebubbleSortForth (int [] arr) {
 	  int [] arr1 = Arrays.copyOfRange(arr, 0, arr.length / 2);
 	  int [] arr2 = Arrays.copyOfRange(arr, arr.length / 2, arr.length);
@@ -46,7 +45,8 @@ public class Sorters extends AbstractSorter {
       s.bubbleSortForth(arr2);
 	  arr = s.merge(arr1, arr2);
   }
-  
+
+  @Sorter
   public void mergebubbleSortBack (int [] arr) {
 	  int [] arr1 = Arrays.copyOfRange (arr, 0, arr.length / 2);
 	  int [] arr2 = Arrays.copyOfRange(arr, arr.length / 2, arr.length);
@@ -55,7 +55,8 @@ public class Sorters extends AbstractSorter {
 	  s.bubbleSortBack(arr2);
 	  arr = s.merge (arr1, arr2);
   }
-  
+
+  @Sorter
   public void mergeArraySort (int [] arr) {
 	  int [] arr1 = Arrays.copyOfRange (arr, 0, arr.length / 2);
 	  int [] arr2 = Arrays.copyOfRange(arr, arr.length / 2, arr.length);
@@ -64,7 +65,8 @@ public class Sorters extends AbstractSorter {
 	  s.arraySort(arr2);
 	  arr = s.merge (arr1, arr2);
   }
-  
+
+  @Sorter
   public void mergeQuickSort (int [] arr) {
 	  int [] arr1 = Arrays.copyOfRange (arr, 0, arr.length/ 2);
 	  int [] arr2 = Arrays.copyOfRange (arr, arr.length / 2, arr.length);
