@@ -1,6 +1,6 @@
 package analyzers;
 
-import sorters.BubbleSorter;
+import sorters.BubbleSorterForth;
 import fillers.Filler;
 
 public class BubbleSortForthAnalyzer extends Analyzer {
@@ -37,7 +37,7 @@ public class BubbleSortForthAnalyzer extends Analyzer {
         int [] arr = Filler.fillSorted (len);
 
         long startCpuTime = CountTime.getCpuTime();
-		new BubbleSorter().bubbleSortForth(arr);
+		new BubbleSorterForth().sort(arr);
 
 		fillSortedAnalyzerMillis = CountTime.getCpuTime() - startCpuTime;
 	}
@@ -47,7 +47,7 @@ public class BubbleSortForthAnalyzer extends Analyzer {
 		int [] arr = Filler.fillSortedWithRandom (len);
 
         long startCpuTime = CountTime.getCpuTime();
-        new BubbleSorter().bubbleSortForth(arr);
+        new BubbleSorterForth().sort(arr);
 
 		fillSortedWithRandomAnalyzerMillis = CountTime.getCpuTime() - startCpuTime;
 	}
@@ -57,7 +57,7 @@ public class BubbleSortForthAnalyzer extends Analyzer {
 		int [] arr = Filler.fillSortedDesc (len);
 
         long startCpuTime = CountTime.getCpuTime();
-        new BubbleSorter().bubbleSortForth(arr);
+        new BubbleSorterForth().sort(arr);
 
 		fillSortedDescAnalyzerMillis = CountTime.getCpuTime() - startCpuTime;
 	}
@@ -67,7 +67,7 @@ public class BubbleSortForthAnalyzer extends Analyzer {
 		int [] arr = Filler.fillRandom (len);
 
         long startCpuTime = CountTime.getCpuTime();
-        new BubbleSorter().bubbleSortForth(arr);
+        new BubbleSorterForth().sort(arr);
 
 		fillRandomAnalyzerMillis = CountTime.getCpuTime() - startCpuTime;
 	}

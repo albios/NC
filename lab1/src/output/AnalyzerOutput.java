@@ -15,14 +15,24 @@ public class AnalyzerOutput {
         System.out.println ("It took " + analyzer.getFillRandomAnalyzerMillis () + " milliseconds to complete sorter on random array");
     }
 
-    public void analyzeBubbleSortForthAnalyzer (int len) {
+    public void runBubbleSortForthAnalyzer (int len) {
         BubbleSortForthAnalyzer bsfa = new BubbleSortForthAnalyzer(len);
+        printAnalyzerResults(bsfa);
+    }
+
+    public void runBubbleSortBackAnalyzer (int len) {
+        BubbleSortBackAnalyzer bsfa = new BubbleSortBackAnalyzer(len);
         printAnalyzerResults(bsfa);
     }
 
     public static void main (String[] args) {
         AnalyzerOutput ao = new AnalyzerOutput();
-        ao.analyzeBubbleSortForthAnalyzer(1000);
+
+        System.out.println ("runBubbleSortForthAnalyzer")
+        ao.runBubbleSortForthAnalyzer(1000);
+
+        System.out.println ("runBubbleSortBackAnalyzer")
+        ao.runBubbleSortBackAnalyzer(1000);
 
     }
 }

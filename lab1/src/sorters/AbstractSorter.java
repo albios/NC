@@ -45,4 +45,6 @@ public abstract class AbstractSorter {
         }
         return arr;
     }
+
+    public abstract void sort (int [] arr);
 }
