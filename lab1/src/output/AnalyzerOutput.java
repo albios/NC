@@ -28,10 +28,10 @@ public class AnalyzerOutput {
     public static void main (String[] args) {
         AnalyzerOutput ao = new AnalyzerOutput();
 
-        System.out.println ("runBubbleSortForthAnalyzer")
+        System.out.println ("runBubbleSortForthAnalyzer");
         ao.runBubbleSortForthAnalyzer(1000);
 
-        System.out.println ("runBubbleSortBackAnalyzer")
+        System.out.println ("runBubbleSortBackAnalyzer");
         ao.runBubbleSortBackAnalyzer(1000);
 
     }

@@ -1,8 +1,16 @@
 package sorters;
 
+import java.util.Arrays.*;
+
 public class QuickSorter extends AbstractSorter {
 
-    public void sort (int arr [], int low, int high) {
+    @Override
+    public void sort(int[] arr) {
+        if (arr == null || arr.length == 0) { return; }
+        quickSort(arr,0, arr.length - 1);
+    }
+
+    public void quickSort (int arr [], int low, int high) {
         int left = low;
         int right = high;
         int piv = arr [(low+high) / 2];
@@ -21,10 +29,16 @@ public class QuickSorter extends AbstractSorter {
             }
         }
         if (low < right) {
-            sort (arr, low, right);
+            quickSort (arr, low, right);
         }
         if (high > left) {
-            sort (arr, left, high);
+            quickSort (arr, left, high);
         }
+    }
+
+    public static void main (String [] args) {
+        int [] arr = {9,8,7,6,5,4,3,2,1};
+        new QuickSorter ().sort (arr);
+        for (int anArr : arr) System.out.println(anArr);
     }
 }

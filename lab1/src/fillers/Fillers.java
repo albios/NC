@@ -19,7 +19,7 @@ public class Fillers {
 		for (int i = 0; i < len; i ++) {
 			arr [i] = rand.nextInt();
 		}
-		new ArraySorter().sort(arr, 0, len - 1);
+		new ArraySorter().sort(arr);
 		return arr;
 	}
 
@@ -30,7 +30,7 @@ public class Fillers {
 		for (int i = 0; i < len; i ++) {
 			arr [i] = rand.nextInt();
 		}
-		new ArraySorter().sort(arr, 0, len - 1);
+		new ArraySorter().sort(arr);
 		arr [len-1] = rand.nextInt();
 		return arr;
 	}
