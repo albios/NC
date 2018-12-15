@@ -1,5 +1,6 @@
 package analyzers;
 
+
 public abstract class Analyzer {
     public abstract void fillSortedAnalyzer           (int len);
     public abstract void fillSortedWithRandomAnalyzer (int len);

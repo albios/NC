@@ -1,63 +1,13 @@
 package fillers;
 
-import java.util.*;
-import sorters.Sorters;
-import sorters.AbstractSorter;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
-public class Filler {
+@Target(ElementType.TYPE)
+@Retention(RetentionPolicy.RUNTIME)
 
-	public static void reverse (int [] arr) {
-		for (int i = 0; i < arr.length / 2; i ++) {
-			AbstractSorter.swap (arr, i, arr.length - i - 1);
-		}
-	}
-
-
-	public static int [] fillSorted (int len) {
-		int [] arr = new int [len];
-		Random rand = new Random();
-		for (int i = 0; i < len; i ++) {
-			arr [i] = rand.nextInt();
-		}
-		new Sorters().quickSort(arr, 0, len - 1);
-		return arr;
-	}
-	
-	public static int [] fillSortedWithRandom (int len) {
-		int [] arr = new int [len];
-		Random rand = new Random();
-		for (int i = 0; i < len; i ++) {
-			arr [i] = rand.nextInt();
-		}
-		new Sorters().quickSort(arr, 0, len - 1);
-		arr [len-1] = rand.nextInt();
-		return arr;
-	}
-
-	public static int [] fillSortedDesc (int len) {
-		int [] arr;
-		arr = fillSorted (len);
-		reverse (arr);
-		return arr;
-	}
-	
-	public static int [] fillRandom (int len) {
-		int [] arr = new int [len];
-		Random rand = new Random();
-		for (int i = 0; i < len; i ++) {
-			arr [i] = rand.nextInt();
-		}
-		return arr;
-	}
-	
-	public static void main(String[] args) {
-		/*
-		Sorters s = new Sorters ();
-
-		s.printArray(fillSorted (5));
-		s.printArray (fillSortedWithRandom(5));
-		s.printArray(fillSortedDesc(5));
-		s.printArray(fillRandom(5));*/
-	}
-
+public @interface filler {
+    String info () default "";
 }

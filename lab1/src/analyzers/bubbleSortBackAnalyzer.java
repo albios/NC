@@ -1,7 +1,7 @@
 package analyzers;
 
 import sorters.BubbleSorterBack;
-import fillers.Filler;
+import fillers.Fillers;
 
 public class BubbleSortBackAnalyzer extends Analyzer {
     private long fillSortedAnalyzerMillis;
@@ -34,7 +34,7 @@ public class BubbleSortBackAnalyzer extends Analyzer {
 
     @Override
     public void fillSortedAnalyzer (int len) {
-        int [] arr = Filler.fillSorted (len);
+        int [] arr = Fillers.fillSorted (len);
 
         long startCpuTime = CountTime.getCpuTime();
         new BubbleSorterBack().sort(arr);
@@ -44,7 +44,7 @@ public class BubbleSortBackAnalyzer extends Analyzer {
 
     @Override
     public void fillSortedWithRandomAnalyzer (int len) {
-        int [] arr = Filler.fillSortedWithRandom (len);
+        int [] arr = Fillers.fillSortedWithRandom (len);
 
         long startCpuTime = CountTime.getCpuTime();
         new BubbleSorterBack().sort(arr);
@@ -54,7 +54,7 @@ public class BubbleSortBackAnalyzer extends Analyzer {
 
     @Override
     public void fillSortedDescAnalyzer (int len) {
-        int [] arr = Filler.fillSortedDesc (len);
+        int [] arr = Fillers.fillSortedDesc (len);
 
         long startCpuTime = CountTime.getCpuTime();
         new BubbleSorterBack().sort(arr);
@@ -64,7 +64,7 @@ public class BubbleSortBackAnalyzer extends Analyzer {
 
     @Override
     public void fillRandomAnalyzer (int len) {
-        int [] arr = Filler.fillRandom (len);
+        int [] arr = Fillers.fillRandom (len);
 
         long startCpuTime = CountTime.getCpuTime();
         new BubbleSorterBack().sort(arr);
