@@ -23,7 +23,7 @@ public class QuickSorter extends AbstractSorter {
                 right --;
             }
             if (left <= right) {
-                Sorters.swap (arr, left, right);
+                AbstractSorter.swap (arr, left, right);
                 left ++;
                 right --;
             }
@@ -37,8 +37,6 @@ public class QuickSorter extends AbstractSorter {
     }
 
     public static void main (String [] args) {
-        int [] arr = {9,8,7,6,5,4,3,2,1};
-        new QuickSorter ().sort (arr);
-        for (int anArr : arr) System.out.println(anArr);
+
     }
 }

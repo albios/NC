@@ -13,10 +13,10 @@ public class Fillers {
 	}
 
 	@filler
-	public static int [] fillSorted (int len) {
-		int [] arr = new int [len];
+	public static int [] fillSorted (int length) {
+		int [] arr = new int [length];
 		Random rand = new Random();
-		for (int i = 0; i < len; i ++) {
+		for (int i = 0; i < length; i ++) {
 			arr [i] = rand.nextInt();
 		}
 		new ArraySorter().sort(arr);
@@ -24,43 +24,37 @@ public class Fillers {
 	}
 
 	@filler
-	public static int [] fillSortedWithRandom (int len) {
-		int [] arr = new int [len];
+	public static int [] fillSortedWithRandom (int length) {
+		int [] arr = new int [length];
 		Random rand = new Random();
-		for (int i = 0; i < len; i ++) {
+		for (int i = 0; i < length; i ++) {
 			arr [i] = rand.nextInt();
 		}
 		new ArraySorter().sort(arr);
-		arr [len-1] = rand.nextInt();
+		arr [length-1] = rand.nextInt();
 		return arr;
 	}
 
 	@filler
-	public static int [] fillSortedDesc (int len) {
+	public static int [] fillSortedDesc (int length) {
 		int [] arr;
-		arr = fillSorted (len);
+		arr = fillSorted (length);
 		reverse (arr);
 		return arr;
 	}
 
 	@filler
-	public static int [] fillRandom (int len) {
-		int [] arr = new int [len];
+	public static int [] fillRandom (int length) {
+		int [] arr = new int [length];
 		Random rand = new Random();
-		for (int i = 0; i < len; i ++) {
+		for (int i = 0; i < length; i ++) {
 			arr [i] = rand.nextInt();
 		}
 		return arr;
 	}
 	
 	public static void main(String[] args) {
-		/*
-		Sorters s = new Sorters ();
 
-		s.printArray(fillSorted (5));
-		s.printArray (fillSortedWithRandom(5));
-		s.printArray(fillSortedDesc(5));
-		s.printArray(fillRandom(5));*/
 	}
 
 }

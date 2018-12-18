@@ -4,6 +4,7 @@ import sorters.BubbleSorterBack;
 import fillers.Fillers;
 
 public class BubbleSortBackAnalyzer extends Analyzer {
+    
     private long fillSortedAnalyzerMillis;
     private long fillSortedWithRandomAnalyzerMillis;
     private long fillSortedDescAnalyzerMillis;
