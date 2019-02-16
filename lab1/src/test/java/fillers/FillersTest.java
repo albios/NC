@@ -38,7 +38,7 @@ public class FillersTest extends TestCase {
             filler.setAccessible(true);
             Object o = null;
             try {
-                o = filler.invoke(null, 1000);
+                o = filler.invoke (null, 1000);
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
             } catch (InvocationTargetException e) {
