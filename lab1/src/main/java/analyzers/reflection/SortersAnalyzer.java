@@ -54,6 +54,23 @@ public class SortersAnalyzer {
      * runs every sorter with array from every filler and prints out time result
      */
 
+    public static long runSorter (Class sorter, int [] arr) {
+        long startCpuTime = CountTime.getCpuTime();
+        Class [] cArg = {int[].class};
+        try {
+            sorter.getMethod("sort", cArg).invoke(sorter.getDeclaredConstructor().newInstance(null), arr);
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        }
+        return CountTime.getCpuTime() - startCpuTime;
+    }
+
     public void runSorters (int length) throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
         Set <Method> fillers = getFillers();
         Set <Class>  sorters = getSorters();
@@ -65,17 +82,8 @@ public class SortersAnalyzer {
                 Object o = filler.invoke(null, length);
                 int [] arr = (int[]) o;
 
-                Class [] cArg = {int[].class};
-                long startCpuTime;
-                long Millis = -1;
-                try {
-                    startCpuTime = CountTime.getCpuTime();
-                    sorter.getMethod("sort", cArg).invoke(sorter.getDeclaredConstructor().newInstance(null), arr);
-                    Millis = CountTime.getCpuTime() - startCpuTime;
-                } catch (InstantiationException e) {
-                    e.printStackTrace();
-                }
-                System.out.println ("\tsorter is " + sorter.getName() + ", took " + Millis / 1000.0+ " nanoseconds to sort");
+                long millis = runSorter (sorter, arr);
+                System.out.println ("\tsorter is " + sorter.getName() + ", took " + millis / 1000.0+ " nanoseconds to sort");
 //                AbstractSorter.printArray(arr);
             }
         }
