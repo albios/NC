@@ -7,6 +7,7 @@ import java.util.Arrays;
  * @author Biloshytskyi
  */
 
+@sorter("Merging bubble sorter backwards")
 public class MergeBubbleSorterBack extends AbstractSorter{
 
     /**

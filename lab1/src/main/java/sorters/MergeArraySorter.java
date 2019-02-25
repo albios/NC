@@ -7,6 +7,7 @@ import java.util.Arrays;
  * @author Biloshytskyi
  */
 
+@sorter("Merging util.Arrays sorter")
 public class MergeArraySorter extends AbstractSorter {
 
     /**

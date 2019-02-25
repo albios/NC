@@ -5,10 +5,13 @@ import analyzers.reflection.SortersAnalyzer;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.lang.annotation.Annotation;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Set;
 
+import fillers.filler;
+import sorters.sorter;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -22,12 +25,10 @@ public class ExcelOutput {
     Set <Method> fillers = new SortersAnalyzer().getFillers();
 
     public String getFillerName (Method filler) {
-        String name = filler.toString();
-        return name.substring(name.lastIndexOf('.')+1, name.indexOf('('));
+        return filler.getAnnotation(filler.class).value();
     }
-    public String getSorterName (Class sorter)  {
-        String name = sorter.toString();
-        return name.substring (name.lastIndexOf('.')+1);
+    public String getSorterName (Class sorter)   {
+        return ((sorter) sorter.getAnnotation(sorter.class)).value();
     }
 
     public void createTab (Method filler) {
@@ -38,18 +39,18 @@ public class ExcelOutput {
 
         int colNum = 0;
         Cell cell = row.createCell (colNum++);
-        cell.setCellValue("");
+        cell.setCellValue("Milliseconds");
         for (Class sorter : sorters) {
-            Cell cell = row.createCell(colNum++);
+            cell = row.createCell(colNum++);
             cell.setCellValue(getSorterName(sorter));
         }
 
-        for (int i = 1; i < colNum + 1; i ++) sheet.autoSizeColumn (i);
+        for (int i = 0; i < colNum + 1; i ++) sheet.autoSizeColumn (i);
 
-        for (int length = 500; length <= 15000; length += 500) {
+        for (int length = 5000; length <= 100000; length += 5000) {
             row = sheet.createRow(rowNum++);
             colNum = 0;
-            Cell cell = row.createCell(colNum++);
+            cell = row.createCell(colNum++);
             cell.setCellValue (length);
             Object o = null;
             try {
@@ -63,7 +64,7 @@ public class ExcelOutput {
             for (Class sorter : sorters) {
                 cell = row.createCell(colNum ++);
                 int [] arr1 = arr.clone();
-                cell.setCellValue(SortersAnalyzer.runSorter(sorter, arr1));
+                cell.setCellValue(SortersAnalyzer.runSorter(sorter, arr1) / 1000000.0);
             }
         }
 
@@ -75,6 +76,7 @@ public class ExcelOutput {
 
         for (Method filler : out.fillers) {
             out.createTab(filler);
+            System.out.println(out.getFillerName(filler) + " tab done");
         }
 
         try {

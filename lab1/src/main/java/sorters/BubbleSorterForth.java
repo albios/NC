@@ -5,6 +5,7 @@ package sorters;
  * * @author Biloshytskyi
  */
 
+@sorter("Bubble sorter forwards")
 public class BubbleSorterForth extends BubbleSorter {
 
     /**

@@ -6,6 +6,7 @@ package sorters;
  * @see <a href="https://en.wikipedia.org/wiki/Quicksort">QuickSort</a>
  */
 
+@sorter("Quick sorter")
 public class QuickSorter extends AbstractSorter {
 
     /**

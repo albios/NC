@@ -29,7 +29,7 @@ public class Fillers {
 	 * @return created array
 	 */
 
-	@filler
+	@filler("Ascending order")
 	public static int [] fillSorted (int length) {
 		int [] arr = fillRandom (length);
 		new ArraySorter().sort(arr);
@@ -42,7 +42,7 @@ public class Fillers {
 	 * @return created array
 	 */
 
-	@filler
+	@filler("Ascending order with a random number at the end")
 	public static int [] fillSortedWithRandom (int length) {
 		int [] arr = fillSorted (length);
 		arr [length-1] = new Random().nextInt();
@@ -55,7 +55,7 @@ public class Fillers {
 	 * @return created array
 	 */
 
-	@filler
+	@filler("Descending order")
 	public static int [] fillSortedDesc (int length) {
 		int [] arr;
 		arr = fillSorted (length);
@@ -69,7 +69,7 @@ public class Fillers {
 	 * @return created array
 	 */
 
-	@filler
+	@filler("Random order")
 	public static int [] fillRandom (int length) {
 		int [] arr = new int [length];
 		Random rand = new Random();
