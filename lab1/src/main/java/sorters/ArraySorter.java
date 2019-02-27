@@ -7,6 +7,7 @@ import java.util.Arrays;
  * @author Biloshytskyi
  */
 
+@sorter("util.Arrays sorter")
 public class ArraySorter extends AbstractSorter {
 
     /**

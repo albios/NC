@@ -8,6 +8,7 @@ import java.util.Arrays;
  * @see <a href="https://en.wikipedia.org/wiki/Quicksort">QuickSort</a>
  */
 
+@sorter("Merging quick sorter")
 public class MergeQuickSorter extends AbstractSorter {
 
     /**
