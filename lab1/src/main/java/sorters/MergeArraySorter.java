@@ -7,7 +7,7 @@ import java.util.Arrays;
  * @author Biloshytskyi
  */
 
-public class MergeArraySorter extends AbstractSorter {
+public class MergeArraySorter extends MergeSorter {
 
     /**
      * Splits an array in two, sorts both using {@link sorters.ArraySorter#sort(int[]) ArraySorter.sort} and merges them in one

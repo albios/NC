@@ -7,7 +7,7 @@ import java.util.Arrays;
  * @author Biloshytskyi
  */
 
-public class MergeBubbleSorterForth extends AbstractSorter{
+public class MergeBubbleSorterForth extends MergeSorter {
 
     /**
      * Splits an array in two, sorts both using {@link sorters.BubbleSorterForth#sort(int[]) BubbleSorterForth.sort} and merges them in one

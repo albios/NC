@@ -8,7 +8,7 @@ import java.util.Arrays;
  * @see <a href="https://en.wikipedia.org/wiki/Quicksort">QuickSort</a>
  */
 
-public class MergeQuickSorter extends AbstractSorter {
+public class MergeQuickSorter extends MergeSorter {
 
     /**
      * Splits an array in two, sorts both using {@link sorters.QuickSorter#sort(int[]) QuickSorter.sort} and merges them in one
