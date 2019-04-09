@@ -1,4 +1,6 @@
-package sorters;
+package sorters.bubble_sorters;
+
+import sorters.AbstractSorter;
 
 /**
  * Root class for all bubble sorters

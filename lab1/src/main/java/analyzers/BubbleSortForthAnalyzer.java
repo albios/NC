@@ -1,6 +1,6 @@
 package analyzers;
 
-import sorters.BubbleSorterForth;
+import sorters.bubble_sorters.BubbleSorterForth;
 import fillers.Fillers;
 
 public class BubbleSortForthAnalyzer extends Analyzer {

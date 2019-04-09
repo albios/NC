@@ -1,4 +1,7 @@
-package sorters;
+package sorters.merge_sorters;
+
+import sorters.QuickSorter;
+import sorters.sorter;
 
 import java.util.Arrays;
 
@@ -8,6 +11,7 @@ import java.util.Arrays;
  * @see <a href="https://en.wikipedia.org/wiki/Quicksort">QuickSort</a>
  */
 
+@sorter("MergeQuickSorter")
 public class MergeQuickSorter extends MergeSorter {
 
     /**
