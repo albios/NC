@@ -80,7 +80,7 @@ public class ExcelOutput {
 
     public void createChart (XSSFSheet sheet) {
         Drawing drawing = sheet.createDrawingPatriarch();
-        ClientAnchor anchor = drawing.createAnchor(0, 0, 0, 0, 10, 3, NUM_OF_COLUMNS + 15, 20);
+        ClientAnchor anchor = drawing.createAnchor(0, 0, 0, 0, 15, 5, NUM_OF_COLUMNS + 15, 20);
 
         Chart chart = drawing.createChart(anchor);
         ChartLegend legend = chart.getOrCreateLegend();

@@ -1,4 +1,8 @@
-package sorters;
+package sorters.merge_sorters;
+
+import sorters.bubble_sorters.BubbleSorter;
+import sorters.bubble_sorters.BubbleSorterForth;
+import sorters.sorter;
 
 import java.util.Arrays;
 
@@ -7,6 +11,7 @@ import java.util.Arrays;
  * @author Biloshytskyi
  */
 
+@sorter("MergeBubbleSorterForth")
 public class MergeBubbleSorterForth extends MergeSorter {
 
     /**
@@ -18,7 +23,7 @@ public class MergeBubbleSorterForth extends MergeSorter {
     public void sort (int [] arr) {
         int [] arr1 = Arrays.copyOfRange(arr, 0, arr.length / 2);
         int [] arr2 = Arrays.copyOfRange(arr, arr.length / 2, arr.length);
-        BubbleSorter s = new BubbleSorterForth ();
+        BubbleSorter s = new BubbleSorterForth();
         s.sort(arr1);
         s.sort(arr2);
         s.merge(arr1, arr2, arr);

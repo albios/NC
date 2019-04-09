@@ -1,4 +1,6 @@
-package sorters;
+package sorters.merge_sorters;
+
+import sorters.AbstractSorter;
 
 /**
  * Root class for all merging sorters

@@ -1,4 +1,7 @@
-package sorters;
+package sorters.bubble_sorters;
+
+import sorters.sorter;
+import sorters.bubble_sorters.BubbleSorter;
 
 /**
  * Class for bubble sorter in reverse order

@@ -1,4 +1,7 @@
-package sorters;
+package sorters.merge_sorters;
+
+import sorters.ArraySorter;
+import sorters.sorter;
 
 import java.util.Arrays;
 
@@ -7,6 +10,7 @@ import java.util.Arrays;
  * @author Biloshytskyi
  */
 
+@sorter("MergeArraySorter")
 public class MergeArraySorter extends MergeSorter {
 
     /**
